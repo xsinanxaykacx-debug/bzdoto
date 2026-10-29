@@ -39,6 +39,11 @@ body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(
 .hero h1{font-size:clamp(26px,5vw,52px);line-height:1.1;letter-spacing:-1.2px;font-weight:800;max-width:720px}
 .hero h1 span{color:var(--brand)}
 .hero p{margin-top:12px;font-size:clamp(14px,1.6vw,17px);color:#a9b6cc;max-width:560px}
+.brand-slogan{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:22px;max-width:650px}
+.brand-slogan-text{font-size:clamp(16px,2.1vw,22px);font-weight:700;line-height:1.45;letter-spacing:.1px;color:#fff}
+.brand-slogan-text strong{color:var(--brand);font-weight:800}
+.brand-slogan-accent{width:64px;height:3px;border-radius:3px;background:var(--brand)}
+@media(max-width:520px){.brand-slogan{margin-top:18px;gap:7px}.brand-slogan-text{font-size:17px}}
 /* FINDER */
 .finder{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:-50px;position:relative;z-index:3;border:1px solid var(--line);width:100%}
 .finder h2{font-size:15px;font-weight:700;margin-bottom:14px}
@@ -181,6 +186,10 @@ footer{background:var(--dark);color:#8fa0ba;padding:30px 0 20px;margin-top:50px;
   <div class="wrap">
     <h1>Aracınıza tam uyan <span>yedek parçayı</span> saniyeler içinde bulun.</h1>
     <p>BZDOTO Yedek Parça güvencesiyle; orijinal ve muadil oto yedek parçalarda geniş stok, hızlı kargo ve teknik destek.</p>
+    <div class="brand-slogan" aria-label="Hizmette Kalite, Alışverişte Güvence">
+      <div class="brand-slogan-text">Hizmette <strong>Kalite</strong>, Alışverişte <strong>Güvence.</strong></div>
+      <span class="brand-slogan-accent" aria-hidden="true"></span>
+    </div>
   </div>
 </section>
 
