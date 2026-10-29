@@ -9,13 +9,9 @@
   "icons": [
     {
       "src": "https://i.postimg.cc/YCmFX3SL/BZDOTO.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://i.postimg.cc/YCmFX3SL/BZDOTO.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
