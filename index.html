@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>BZDOTO YEDEK PARÇA</title>
+
+<!-- PWA ve Uygulama Yükleme Etiketleri -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#ff4d2e">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://bzdotoyedek.vercel.app/" />
@@ -40,6 +43,11 @@ body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(
 .hero h1{font-size:clamp(26px,5vw,52px);line-height:1.1;letter-spacing:-1.2px;font-weight:800;max-width:720px}
 .hero h1 span{color:var(--brand)}
 .hero p{margin-top:12px;font-size:clamp(14px,1.6vw,17px);color:#a9b6cc;max-width:560px}
+.brand-slogan{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:22px;max-width:650px}
+.brand-slogan-text{font-size:clamp(16px,2.1vw,22px);font-weight:700;line-height:1.45;letter-spacing:.1px;color:#fff}
+.brand-slogan-text strong{color:var(--brand);font-weight:800}
+.brand-slogan-accent{width:64px;height:3px;border-radius:3px;background:var(--brand)}
+@media(max-width:520px){.brand-slogan{margin-top:18px;gap:7px}.brand-slogan-text{font-size:17px}}
 /* FINDER */
 .finder{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:-50px;position:relative;z-index:3;border:1px solid var(--line);width:100%}
 .finder h2{font-size:15px;font-weight:700;margin-bottom:14px}
@@ -86,6 +94,7 @@ select:focus{border-color:var(--brand);background-color:#fff;box-shadow:0 0 0 4p
 .price s{font-size:12px;font-weight:500;color:#a3aec0;margin-left:4px}
 .add{border:0;border-radius:9px;padding:9px 14px;font-size:12.5px;font-weight:700;background:var(--ink);color:#fff;cursor:pointer;transition:.2s;white-space:nowrap}
 .add:hover{background:var(--brand)}
+.add:disabled{background:#94a3b8;cursor:not-allowed;color:#fff}
 /* LOAD MORE */
 .load-more-wrap{text-align:center;margin-top:30px}
 .load-more-btn{border:1px solid var(--line);background:#fff;padding:12px 28px;border-radius:11px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.2s;color:var(--ink)}
@@ -114,6 +123,7 @@ footer{background:var(--dark);color:#8fa0ba;padding:30px 0 20px;margin-top:50px;
 .qty-ctrl{display:flex;align-items:center;gap:12px}
 .qty-btn{border:1px solid var(--line);background:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;display:grid;place-items:center;transition:.2s}
 .qty-btn:active{background:var(--soft);transform:scale(0.95)}
+.qty-btn:disabled{opacity:0.4;cursor:not-allowed;background:var(--soft);color:var(--muted)}
 .qty-val{font-weight:700;font-size:15px;min-width:20px;text-align:center}
 
 .rm{border:1px solid #fee2e2;background:#fef2f2;color:#dc2626;font-size:12px;font-weight:700;cursor:pointer;padding:8px 12px;border-radius:8px;transition:.2s}
@@ -155,6 +165,7 @@ footer{background:var(--dark);color:#8fa0ba;padding:30px 0 20px;margin-top:50px;
 .modal-desc{font-size:14px;color:#334155;line-height:1.6;white-space:pre-wrap;margin-bottom:24px;flex:1}
 .modal-add-btn{width:100%;border:0;border-radius:11px;padding:14px;font-weight:700;font-size:15px;background:var(--ink);color:#fff;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:10px}
 .modal-add-btn:hover{background:var(--brand)}
+.modal-add-btn:disabled{background:#94a3b8;cursor:not-allowed}
 .modal-wa-btn{width:100%;border:1px solid #25D366;border-radius:11px;padding:12px;font-weight:700;font-size:14px;background:#fff;color:#25D366;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
 .modal-wa-btn:hover{background:#f0fdf4}
 </style>
@@ -178,12 +189,16 @@ footer{background:var(--dark);color:#8fa0ba;padding:30px 0 20px;margin-top:50px;
   </div>
 </header>
 
-<section class="hero">
-  <center><div class="wrap">
-    <h1>BZDOTO YEDEK PARÇA <span><br>Hizmette Kalite, Satışta Güvence</br></span></h1>
+<center><section class="hero">
+  <div class="wrap">
+    <h1>BZDOTO YEDEK PARÇA<br><span>Aradığınızı</br></span> saniyeler içinde bulun.</h1>
     <p>BZDOTO Yedek Parça güvencesiyle; orijinal ve muadil oto yedek parçalarda geniş stok, hızlı kargo ve teknik destek.</p>
-  </div></center>
-</section>
+    <center><div class="brand-slogan" aria-label="Hizmette Kalite, Alışverişte Güvence"></center>
+      <div class="brand-slogan-text">Hizmette <strong>Kalite</strong>, Alışverişte <strong>Güvence.</strong></div></center>
+      <span class="brand-slogan-accent" aria-hidden="true"></span>
+    </div>
+  </div>
+</section></center>
 
 <section class="wrap" id="arac">
   <div class="finder">
@@ -256,6 +271,7 @@ footer{background:var(--dark);color:#8fa0ba;padding:30px 0 20px;margin-top:50px;
         <div class="modal-specs">
           <div class="spec-row"><span class="spec-label">OEM No</span><span class="spec-value" id="modalOem"></span></div>
           <div class="spec-row"><span class="spec-label">Araç</span><span class="spec-value" id="modalCar"></span></div>
+          <div class="spec-row"><span class="spec-label">Stok</span><span class="spec-value" id="modalStock"></span></div>
         </div>
 
         <h3 class="modal-desc-title">Ürün Açıklaması</h3>
@@ -332,24 +348,33 @@ async function loadProducts(){
       name: col("ad"), desc: col("aciklama"), oem: col("oem"),
       price: col("fiyat"), old: col("eskifiyat"), badge: col("rozet"),
       badgeType: col("rozettip"), img: col("resim"),
-      brand: col("marka"), model: col("model")
+      brand: col("marka"), model: col("model"),
+      stock: col("stok")
     };
     
-    PRODUCTS = rows.slice(1).map((r, i) => ({
-      id: r[idx.id] || (i+1),
-      cat: (r[idx.cat] || "diger").trim(),
-      catLabel: (r[idx.catLabel] || "Diğer").trim(),
-      name: (r[idx.name] || "").trim(),
-      desc: (r[idx.desc] || "").trim(),
-      oem: (r[idx.oem] || "").trim(),
-      price: parseFloat(r[idx.price]) || 0,
-      old: parseFloat(r[idx.old]) || 0,
-      badge: (r[idx.badge] || "").trim(),
-      badgeType: (r[idx.badgeType] || "").trim(),
-      img: (r[idx.img] || "").trim(),
-      brand: (r[idx.brand] || "").trim(),
-      model: (r[idx.model] || "").trim()
-    })).filter(p => p.name);
+    PRODUCTS = rows.slice(1).map((r, i) => {
+      let parsedStock = null;
+      if (idx.stock >= 0 && r[idx.stock] && r[idx.stock].trim() !== "") {
+        parsedStock = parseInt(r[idx.stock].trim(), 10);
+      }
+
+      return {
+        id: r[idx.id] || (i+1),
+        cat: (r[idx.cat] || "diger").trim(),
+        catLabel: (r[idx.catLabel] || "Diğer").trim(),
+        name: (r[idx.name] || "").trim(),
+        desc: (r[idx.desc] || "").trim(),
+        oem: (r[idx.oem] || "").trim(),
+        price: parseFloat(r[idx.price]) || 0,
+        old: parseFloat(r[idx.old]) || 0,
+        badge: (r[idx.badge] || "").trim(),
+        badgeType: (r[idx.badgeType] || "").trim(),
+        img: (r[idx.img] || "").trim(),
+        brand: (r[idx.brand] || "").trim(),
+        model: (r[idx.model] || "").trim(),
+        stock: parsedStock
+      };
+    }).filter(p => p.name);
 
     buildChips();
     initVehicleFilters(); 
@@ -493,7 +518,10 @@ function render(){
 
   const productsToShow = filtered.slice(0, visibleCount);
 
-  grid.innerHTML = productsToShow.map(p => `
+  grid.innerHTML = productsToShow.map(p => {
+    const isOutOfStock = p.stock !== null && p.stock <= 0;
+
+    return `
     <article class="card" onclick="openModal(${p.id})">
       <div class="card-media">
         ${p.badge ? `<span class="badge ${p.badgeType}">${p.badge}</span>` : ""}
@@ -507,11 +535,14 @@ function render(){
         ${p.oem ? `<span class="oem">OEM: ${esc(p.oem)}</span>` : ""}
         <div class="card-foot">
           <div class="price">₺${fmt(p.price)}${p.old ? `<s>₺${fmt(p.old)}</s>` : ""}</div>
-          <button class="add" onclick="event.stopPropagation(); addToCartById(${p.id})">Sepete Ekle</button>
+          ${isOutOfStock 
+            ? `<button class="add" disabled>Tükendi</button>` 
+            : `<button class="add" onclick="event.stopPropagation(); addToCartById(${p.id})">Sepete Ekle</button>`
+          }
         </div>
       </div>
     </article>
-  `).join("");
+  `}).join("");
 
   if (filtered.length > visibleCount) {
     loadMoreWrap.style.display = "block";
@@ -538,6 +569,18 @@ function openModal(id) {
   document.getElementById("modalOem").textContent = p.oem || "Belirtilmemiş";
   document.getElementById("modalCar").textContent = (p.brand || p.model) ? `${p.brand} ${p.model}`.trim() : "Genel Uyumlu";
 
+  const stockEl = document.getElementById("modalStock");
+  if (p.stock === null) {
+    stockEl.textContent = "Sınırsız";
+    stockEl.style.color = "var(--ink)";
+  } else if (p.stock > 0) {
+    stockEl.textContent = `${p.stock} Adet`;
+    stockEl.style.color = "#0f9d58";
+  } else {
+    stockEl.textContent = "Tükendi";
+    stockEl.style.color = "#dc2626";
+  }
+
   const badgeEl = document.getElementById("modalBadge");
   if (p.badge) {
     badgeEl.textContent = p.badge;
@@ -559,15 +602,22 @@ function openModal(id) {
   const waMessage = `Merhaba, *${p.name}* (OEM: ${p.oem || '-'}) hakkında bilgi almak istiyorum.`;
   document.getElementById("modalWaBtn").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
-  // Butonu klonlayıp eski listener'ları temizliyoruz
   const addBtn = document.getElementById("modalAddBtn");
   const newAddBtn = addBtn.cloneNode(true);
   addBtn.parentNode.replaceChild(newAddBtn, addBtn);
   
-  newAddBtn.addEventListener("click", () => {
-    addToCartById(p.id);
-    closeModal();
-  });
+  const isOutOfStock = p.stock !== null && p.stock <= 0;
+  if (isOutOfStock) {
+    newAddBtn.disabled = true;
+    newAddBtn.textContent = "Stokta Tükendi";
+  } else {
+    newAddBtn.disabled = false;
+    newAddBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg> Sepete Ekle`;
+    newAddBtn.addEventListener("click", () => {
+      addToCartById(p.id);
+      closeModal();
+    });
+  }
 
   modal.classList.add("open");
   document.body.style.overflow = "hidden";
@@ -591,15 +641,13 @@ document.addEventListener("keydown", e => {
 });
 
 /* ============================================================
-   SEPET İŞLEMLERİ (KESME İŞARETİ HATASI ÇÖZÜLDÜ)
+   SEPET İŞLEMLERİ VE STOK SINIRI
    ============================================================ */
 let cart = [];
 try {
   const storedCart = localStorage.getItem("bzdoto_cart");
   if (storedCart) cart = JSON.parse(storedCart);
-} catch(e) {
-  console.warn("Sepet hafızası okunamadı, güvenli modda başlatıldı.");
-}
+} catch(e) {}
 
 const drawer = document.getElementById("drawer");
 const overlay = document.getElementById("overlay");
@@ -610,16 +658,22 @@ const cartCountEl = document.getElementById("cartCount");
 function saveCart() {
   try {
     localStorage.setItem("bzdoto_cart", JSON.stringify(cart));
-  } catch(e) {
-    console.warn("Sepet hafızaya kaydedilemedi.");
-  }
+  } catch(e) {}
 }
 
-// Ürünleri isme göre değil, benzersiz ID'ye göre sepete ekliyoruz
 function addToCartById(id) {
   const p = PRODUCTS.find(x => x.id == id);
   if(!p) return;
+
   const ex = cart.find(i => i.id == id);
+  const currentQty = ex ? ex.qty : 0;
+
+  // Sepete eklerken stok kontrolü
+  if (p.stock !== null && (currentQty + 1) > p.stock) {
+    toast(`Stokta yeterli yok! (Maksimum: ${p.stock} adet)`);
+    return;
+  }
+
   if(ex) ex.qty++; 
   else cart.push({ id: p.id, name: p.name, price: p.price, qty: 1 });
   
@@ -632,20 +686,28 @@ function renderCart(){
   if(!cart.length) {
     cartItemsEl.innerHTML = '<p class="empty">Sepetiniz boş.</p>';
   } else {
-    cartItemsEl.innerHTML = cart.map((it, index) => `
+    cartItemsEl.innerHTML = cart.map((it, index) => {
+      const p = PRODUCTS.find(x => x.id == it.id);
+      const maxStock = p ? p.stock : null;
+      const isMaxed = maxStock !== null && it.qty >= maxStock;
+
+      return `
       <div class="ci">
         <div class="ci-left">
           <strong>${esc(it.name)}</strong>
-          <div class="ci-price">₺${fmt(it.price)}</div>
+          <div class="ci-price">
+            ₺${fmt(it.price)} 
+            ${maxStock !== null ? `<span style="font-size:13px; font-weight:700; color:var(--brand); margin-left:6px; background:#fff3f0; padding:2px 6px; border-radius:4px;">Stok: ${maxStock}</span>` : ""}
+          </div>
           <div class="qty-ctrl">
-            <!-- Onclick yerine data-index kullanıyoruz, böylece kesme işareti kodu bozmuyor -->
             <button class="qty-btn" data-index="${index}" data-action="minus">-</button>
             <span class="qty-val">${it.qty}</span>
-            <button class="qty-btn" data-index="${index}" data-action="plus">+</button>
+            <button class="qty-btn" data-index="${index}" data-action="plus" ${isMaxed ? 'disabled' : ''}>+</button>
           </div>
         </div>
         <button class="rm" data-index="${index}" data-action="remove">Sil</button>
-      </div>`).join("");
+      </div>`
+    }).join("");
   }
   
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
@@ -654,21 +716,28 @@ function renderCart(){
   cartCountEl.textContent = count;
 }
 
-// Sepetteki tüm butonları güvenli bir şekilde dinleyen Event Delegation
+// Sepetteki butonlara tıklanma (Event Delegation)
 cartItemsEl.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
-  if (!btn) return;
+  if (!btn || btn.disabled) return; 
 
   const index = parseInt(btn.dataset.index);
   const action = btn.dataset.action;
+  const item = cart[index];
+  if (!item) return;
 
   if (action === "remove") {
     cart.splice(index, 1);
   } else if (action === "plus") {
-    cart[index].qty++;
+    const p = PRODUCTS.find(x => x.id == item.id);
+    // Sepet içinde + butonuna basıldığında stok kontrolü
+    if (p && p.stock !== null && item.qty >= p.stock) {
+      return toast(`Stokta yeterli yok! (Maksimum: ${p.stock} adet)`);
+    }
+    item.qty++;
   } else if (action === "minus") {
-    cart[index].qty--;
-    if (cart[index].qty <= 0) cart.splice(index, 1);
+    item.qty--;
+    if (item.qty <= 0) cart.splice(index, 1);
   }
 
   saveCart();
@@ -712,13 +781,13 @@ function toast(msg){
 
 loadProducts();
 renderCart();
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(() => {
-      console.log('Service Worker kaydedildi.');
-    });
-  }
+
+// PWA Kayıt (Uygulama olarak yüklenebilmesi için)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(() => {
+    console.log('Service Worker kaydedildi.');
+  });
+}
 </script>
 </body>
 </html>
