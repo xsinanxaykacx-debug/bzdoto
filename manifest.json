@@ -1,0 +1,21 @@
+{
+  "name": "BZDOTO Yedek Parça",
+  "short_name": "BZDOTO",
+  "description": "Aracınıza tam uyan yedek parçayı saniyeler içinde bulun.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff4d2e",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/YCmFX3SL/BZDOTO.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/YCmFX3SL/BZDOTO.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
