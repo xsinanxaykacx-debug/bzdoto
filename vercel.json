@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/urun/:id", "destination": "/api/urun?id=:id" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" }
+  ]
+}
